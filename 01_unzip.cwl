@@ -1,7 +1,7 @@
-cwlVersion: v1.2
+cwlVersion: v1.0
 class: CommandLineTool
 
-baseCommand: python
+baseCommand: python3
 
 inputs:
   outPutDir: 
@@ -37,11 +37,11 @@ outputs:
     type: Directory
     outputBinding:
       glob: "02-t1"
-  t2_am:
+  t2a:
     type: Directory
     outputBinding:
       glob: "03-t2"
-  t2_ph:
+  t2p:
     type: Directory
     outputBinding:
       glob: "04-t2"

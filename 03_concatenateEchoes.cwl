@@ -8,20 +8,12 @@ inputs:
     type: string
     default: "./"
     inputBinding:
-      position: 6
-  b1_dcm: 
-    type: Directory
-    inputBinding:
-      position: 5
-  t1_dcm: 
-    type: Directory
-    inputBinding:
       position: 4
-  t2p_dcm: 
+  t2p_nii_i: 
     type: Directory
     inputBinding:
       position: 3
-  t2a_dcm: 
+  t2a_nii_i: 
     type: Directory
     inputBinding:
       position: 2      
@@ -31,7 +23,7 @@ inputs:
       position: 1
     default:
       class: File
-      location: ./QSM_pipeline/02_convert2Nifti.py
+      location: ./QSM_pipeline/03_concatenateEchoes.py
   
 
 outputs:
@@ -39,20 +31,12 @@ outputs:
     type: File
     outputBinding:
       glob: "log.txt"
-  b1_nii:
-    type: Directory
+  t2a_c:
+    type: File
     outputBinding:
-      glob: "06-b1"
-  t1_nii:
-    type: Directory
+      glob: "CE_magnitude.npy"
+  t2p_c:
+    type: File
     outputBinding:
-      glob: "07-t1"
-  t2a_nii:
-    type: Directory
-    outputBinding:
-      glob: "08-t2"
-  t2p_nii:
-    type: Directory
-    outputBinding:
-      glob: "09-t2"
+      glob: "CE_phase.npy"
 
