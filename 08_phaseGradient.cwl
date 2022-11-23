@@ -8,8 +8,16 @@ inputs:
     type: string
     default: "./"
     inputBinding:
+      position: 5
+  t2p_nii_i:
+    type: Directory
+    inputBinding:
+      position: 4
+  eresFile: 
+    type: File
+    inputBinding:
       position: 3
-  ce_mag: 
+  ce_phase: 
     type: File
     inputBinding:
       position: 2      
@@ -19,7 +27,7 @@ inputs:
       position: 1
     default:
       class: File
-      location: ./QSM_pipeline/05_phaseLaplacianError.py
+      location: ./QSM_pipeline/08_phaseGradient.py
   
 
 outputs:
@@ -27,8 +35,13 @@ outputs:
     type: File
     outputBinding:
       glob: "log.txt"
-  eres:
+  gampFile:
     type: File
     outputBinding:
-      glob: "eres.npy"
+      glob: "gamp.npy"
+  fstOrderFit:
+    type: File
+    outputBinding:
+      glob: 'ffoW1.nii.gz'
+
 

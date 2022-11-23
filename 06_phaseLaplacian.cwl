@@ -9,7 +9,7 @@ inputs:
     default: "./"
     inputBinding:
       position: 3
-  ce_mag: 
+  ce_phase: 
     type: File
     inputBinding:
       position: 2      
@@ -19,7 +19,7 @@ inputs:
       position: 1
     default:
       class: File
-      location: ./QSM_pipeline/05_phaseLaplacianError.py
+      location: ./QSM_pipeline/06_phaseLaplacian.py
   
 
 outputs:
@@ -27,8 +27,8 @@ outputs:
     type: File
     outputBinding:
       glob: "log.txt"
-  eres:
+  lap:
     type: File
     outputBinding:
-      glob: "eres.npy"
+      glob: "lap.npy"
 
