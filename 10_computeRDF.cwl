@@ -8,16 +8,20 @@ inputs:
     type: string
     default: "./"
     inputBinding:
-      position: 5
+      position: 6
   t2p_nii:
     type: Directory
     inputBinding:
+      position: 5
+  lapW:
+    type: File
+    inputBinding:
       position: 4
-  eres: 
+  rdfMask: 
     type: File
     inputBinding:
       position: 3
-  t2p_c: 
+  lapSum: 
     type: File
     inputBinding:
       position: 2      
@@ -27,7 +31,7 @@ inputs:
       position: 1
     default:
       class: File
-      location: ./QSM_pipeline/08_phaseGradient.py
+      location: ./QSM_pipeline/10_computeRDF.py
   
 
 outputs:
@@ -35,13 +39,8 @@ outputs:
     type: File
     outputBinding:
       glob: "log.txt"
-  gamp:
+  RDF:
     type: File
     outputBinding:
-      glob: "gamp.npy"
-  firstOrderFit:
-    type: File
-    outputBinding:
-      glob: 'ffoW1.nii.gz'
-
+      glob: "qsmIn_rdf"
 

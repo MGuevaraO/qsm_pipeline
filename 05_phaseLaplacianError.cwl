@@ -9,7 +9,7 @@ inputs:
     default: "./"
     inputBinding:
       position: 3
-  ce_mag: 
+  t2a_c: 
     type: File
     inputBinding:
       position: 2      

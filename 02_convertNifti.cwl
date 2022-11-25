@@ -9,19 +9,19 @@ inputs:
     default: "./"
     inputBinding:
       position: 6
-  b1_dcm: 
+  b1: 
     type: Directory
     inputBinding:
       position: 5
-  t1_dcm: 
+  t1: 
     type: Directory
     inputBinding:
       position: 4
-  t2p_dcm: 
+  t2p: 
     type: Directory
     inputBinding:
       position: 3
-  t2a_dcm: 
+  t2a: 
     type: Directory
     inputBinding:
       position: 2      

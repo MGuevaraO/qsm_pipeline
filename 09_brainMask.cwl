@@ -13,11 +13,11 @@ inputs:
     type: File
     inputBinding:
       position: 4
-  ffoW1File_i: 
+  firstOrderFit: 
     type: File
     inputBinding:
       position: 3
-  t2p_nii_i: 
+  t2p_nii: 
     type: Directory
     inputBinding:
       position: 2      
@@ -38,10 +38,10 @@ outputs:
   rdfMask:
     type: File
     outputBinding:
-      glob: "'rdf_mask.nii.gz'"
+      glob: "rdf_mask.nii.gz"
   qsmMask:
     type: File
     outputBinding:
-      glob: "'qsm_mask.nii.gz'"
+      glob: "qsmIn_mask"
 
 

@@ -9,19 +9,19 @@ inputs:
     default: "./"
     inputBinding:
       position: 6
-  eresFile:
+  eres:
     type: File
     inputBinding:
       position: 5
-  lapFile:
+  lap:
     type: File
     inputBinding:
       position: 4
-  t2p_nii_i: 
+  t2p_nii: 
     type: Directory
     inputBinding:
       position: 3
-  t2a_nii_i: 
+  t2a_nii: 
     type: Directory
     inputBinding:
       position: 2      
