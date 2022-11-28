@@ -19,10 +19,19 @@ inputs:
 outputs:
   logFile:
     type: File
-    outputSource: compute_QSM/log
+    outputSource: extract_ROI_values/log
   QSM:
     type: File
-    outputSource: compute_QSM/QSM    
+    outputSource: compute_QSM/QSM 
+  R2star:
+    type: File
+    outputSource: compute_R2star/r2star
+  QSM_ROIvals:
+    type: File
+    outputSource: extract_ROI_values/QSM_ROIvalues
+  R2star_ROIvals:
+    type: File 
+    outputSource: extract_ROI_values/R2_ROIvalues    
     
 steps:    
   unzip_files:
@@ -110,3 +119,21 @@ steps:
       RDF: compute_RDF/RDF
       maskQSM: brain_mask/qsmMask
     out: [log, QSM] 
+
+  compute_R2star:
+    run: 12_computeR2star.cwl
+    in: 
+      t2a_c: concatenate_echoes/t2a_c
+      t2p_nii: convert_nifti/t2p_nii
+      t2a_nii: convert_nifti/t2a_nii
+    out: [log, t2star, r2star] 
+
+  extract_ROI_values:
+    run: 13_extractROIvalues.cwl
+    in:
+      segmentation: unzip_files/segmentation
+      t2p_nii: convert_nifti/t2p_nii
+      r2star: compute_R2star/r2star
+      QSM: compute_QSM/QSM
+    out: [log, QSM_ROIvalues, R2_ROIvalues] 
+    
