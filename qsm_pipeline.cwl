@@ -17,9 +17,6 @@ inputs:
       location: ./Oasis_Template/T_template0_BrainCerebellumProbabilityMask.nii.gz
 
 outputs:
-  logFile:
-    type: File
-    outputSource: extract_ROI_values/log
   QSM:
     type: File
     outputSource: compute_QSM/QSM 
