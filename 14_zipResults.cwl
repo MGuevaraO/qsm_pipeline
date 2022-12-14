@@ -26,7 +26,7 @@ inputs:
     inputBinding:
       position: 3
   fileName:
-    type: File
+    type: string
     inputBinding:
       position: 2    
   script:
@@ -40,7 +40,7 @@ inputs:
 
 outputs:
   zipFileOut:
-    type: File
+    type: File 
     outputBinding:
-      glob: "*.tar.gz"
+      glob: $(inputs.fileName)
 

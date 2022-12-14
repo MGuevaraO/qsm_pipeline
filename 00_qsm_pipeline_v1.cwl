@@ -17,7 +17,8 @@ inputs:
       location: ./Oasis_Template/T_template0_BrainCerebellumProbabilityMask.nii.gz
 
 outputs:
-    type: File 
+  zipFileOut:
+    type: File
     outputSource: zip_results/zipFileOut    
     
 steps:    
@@ -105,7 +106,7 @@ steps:
       t2a: unzip_files/t2a
       RDF: compute_RDF/RDF
       maskQSM: brain_mask/qsmMask
-    out: [log, QSM] 
+    out: [QSM] 
 
   compute_R2star:
     run: 12_computeR2star.cwl
