@@ -17,21 +17,8 @@ inputs:
       location: ./Oasis_Template/T_template0_BrainCerebellumProbabilityMask.nii.gz
 
 outputs:
-  logFile:
-    type: File
-    outputSource: extract_ROI_values/log
-  QSM:
-    type: File
-    outputSource: compute_QSM/QSM 
-  R2star:
-    type: File
-    outputSource: compute_R2star/r2star
-  QSM_ROIvals:
-    type: File
-    outputSource: extract_ROI_values/QSM_ROIvalues
-  R2star_ROIvals:
     type: File 
-    outputSource: extract_ROI_values/R2_ROIvalues    
+    outputSource: zip_results/zipFileOut    
     
 steps:    
   unzip_files:
@@ -140,7 +127,7 @@ steps:
   zip_results:
     run: 14_zipResults.cwl
     in:
-      qsmROIval: extract_ROI_values/R2_ROIvalues
+      r2ROIval: extract_ROI_values/R2_ROIvalues
       qsmROIval: extract_ROI_values/QSM_ROIvalues
       r2star: compute_R2star/r2star
       QSM: compute_QSM/QSM
